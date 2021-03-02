@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const EditScreen = ({navigation}) => {
     return (
         <View>
-            <Text>Show Screen</Text>
+            <Text>Edit Screen</Text>
         </View>
     )
 }
