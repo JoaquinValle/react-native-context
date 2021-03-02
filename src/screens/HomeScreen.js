@@ -8,10 +8,10 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* <Button
+      <Button
         title={"Go to Show Screen"}
         onPress={() => navigation.navigate("Show")}
-      /> */}
+      />
       {/* <Button
         title={"Go to Create Screen"}
         onPress={() => navigation.navigate("Create")}
