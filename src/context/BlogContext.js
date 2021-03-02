@@ -1,11 +1,11 @@
 import React from "react";
 
-const Context = React.createContext();
+const BlogContext = React.createContext();
 
-const Component = ({ children }) => {
+export const BlogProvider = ({ children }) => {
   return (
-  	<Context.Provider>
+  	<BlogContext.Provider>
       {children}
-    </Context.Provider>
+    </BlogContext.Provider>
   )
 };
