@@ -3,7 +3,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { BlogProvider } from "./src/context/BlogContext";
+import { Provider as BlogProvider } from "./src/context/BlogContext";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import CreateScreen from "./src/screens/CreateScreen";
