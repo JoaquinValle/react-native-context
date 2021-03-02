@@ -1,14 +1,14 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-const CreateScreen = ({navigation}) => {
-    return (
-        <View>
-            <Text>Create Screen</Text>
-        </View>
-    )
-}
+const CreateScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>Create Screen</Text>
+    </View>
+  );
+};
 
-export default CreateScreen
+export default CreateScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
