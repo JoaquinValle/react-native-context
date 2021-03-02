@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import BlogContext from "../context/BlogContext";
 
 const HomeScreen = ({ navigation }) => {
-  const blogPosts = useContext(BlogContext);
+  const {data, addBlogPost} = useContext(BlogContext);
+
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
@@ -20,12 +21,14 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Edit")}
       />
      <FlatList
-             data={blogPosts}
+             data={data}
              keyExtractor={(key) => key.title}
              renderItem={({ item }) => {
                return <Text>{item.title}</Text>;
              }}
            />
+
+      <Button title="Add blog post" onPress={() => addBlogPost()}/>
     </View>
   );
 };
