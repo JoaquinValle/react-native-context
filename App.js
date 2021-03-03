@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { Text, Button, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Svg, { Path } from "react-native-svg";
