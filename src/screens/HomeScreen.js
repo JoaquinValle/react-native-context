@@ -14,11 +14,12 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPost();
-
-    navigation.addListener("focus", () => {
+    const unsubscribe = navigation.addListener("focus", () => {
       getBlogPost();
     });
-  }, []);
+
+    return unsubscribe;
+  }, [navigation]);
 
   return (
     <View style={styles.container}>

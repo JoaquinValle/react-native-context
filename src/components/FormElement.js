@@ -23,7 +23,7 @@ const Form = ({ navigation, action, initialState, titles, id }) => {
         title="Save"
         onPress={() => {
           if (id) {
-            action({id, title: state.title, body: state.body}, () => navigation.navigate("Show", { id }));
+            action(id, state, () => navigation.navigate("Show", { id }));
           } else {
             action(state, () => navigation.navigate("Home"));
           }
