@@ -13,8 +13,8 @@ const reducer = (state, action) => {
 
 const useForm = (initialState) => {
   const [state, dispatch] = useReducer(reducer, {
-    title: `${initialState ? initialState.title : ""}`,
-    body: `${initialState ? initialState.body : ""}`,
+    title: initialState.title,
+    body: initialState.body,
   });
 
   return [state, dispatch];
