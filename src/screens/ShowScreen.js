@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Context as BlogContext } from "../context/BlogContext";
 
-const ShowScreen = ({ navigation }) => {
+const ShowScreen = ({ route }) => {
+  const { id } = route.params;
+  const { state } = useContext(BlogContext);
+
+  const blogPost = state.find((item) => {
+    return item.id === id
+  });
+
+  console.log(id);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Blog Title</Text>
-      <Text style={styles.body}>Mu big blog post today is all about xyz.</Text>
+      <Text style={styles.title}>{blogPost.title}</Text>
+      <Text style={styles.body}>{blogPost.body}</Text>
     </View>
   );
 };
@@ -23,13 +33,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "600",
     marginVertical: 20,
-    paddingHorizontal: 8
-
+    paddingHorizontal: 8,
   },
   body: {
     marginBottom: 20,
     fontSize: 20,
     paddingHorizontal: 8,
-    lineHeight: 28
-  }
+    lineHeight: 28,
+  },
 });
