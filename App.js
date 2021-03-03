@@ -26,7 +26,7 @@ const App = () => {
               headerRight: () => (
                 <TouchableOpacity onPress={() => navigation.navigate("Create")}>
                   <Svg
-                    style={{ width: 28, height: 28, marginRight: 8 }}
+                    style={{ width: 28, height: 28, marginRight: 8, color: "blue" }}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ const App = () => {
                   }
                 >
                   <Svg
-                    style={{ width: 28, height: 28, marginRight: 8 }}
+                    style={{ width: 28, height: 28, marginRight: 8, color: "blue"}}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
