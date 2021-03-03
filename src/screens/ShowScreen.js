@@ -7,7 +7,7 @@ const ShowScreen = ({ route }) => {
   const { state } = useContext(BlogContext);
 
   const blogPost = state.find((item) => {
-    return item.id === id
+    return item.id === id;
   });
 
   return (

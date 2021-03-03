@@ -49,7 +49,8 @@ const App = () => {
             options={({ navigation, route }) => ({
               headerRight: () => (
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("Edit", { id: route.params.id })
+                  onPress={() =>
+                    navigation.navigate("Edit", { id: route.params.id })
                   }
                 >
                   <Svg
