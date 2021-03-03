@@ -11,29 +11,18 @@ import { Context as BlogContext } from "../context/BlogContext";
 import Svg, { Path } from "react-native-svg";
 
 const HomeScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(BlogContext);
+  const { state, deleteBlogPost } = useContext(BlogContext);
 
   return (
     <View style={styles.container}>
-      <Button
-        title={"Go to Show Screen"}
-        onPress={() => navigation.navigate("Show")}
-      />
-      {/* <Button
-        title={"Go to Create Screen"}
-        onPress={() => navigation.navigate("Create")}
-      /> */}
-      {/* <Button
-        title={"Go to Edit Screen"}
-        onPress={() => navigation.navigate("Edit")}
-      /> */}
-
       <FlatList
         data={state}
         keyExtractor={(key) => key.title}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate("Show", {id: item.id})}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Show", { id: item.id })}
+            >
               <View style={styles.post}>
                 <Text style={styles.title}>
                   {item.title} - {item.id}
@@ -63,8 +52,6 @@ const HomeScreen = ({ navigation }) => {
           );
         }}
       />
-
-      <Button title="Add blog post" onPress={() => addBlogPost()} />
     </View>
   );
 };
