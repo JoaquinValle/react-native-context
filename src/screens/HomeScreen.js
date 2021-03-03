@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -10,7 +10,11 @@ import { Context as BlogContext } from "../context/BlogContext";
 import Svg, { Path } from "react-native-svg";
 
 const HomeScreen = ({ navigation }) => {
-  const { state, deleteBlogPost } = useContext(BlogContext);
+  const { state, deleteBlogPost, getBlogPost } = useContext(BlogContext);
+
+  useEffect(() => {
+    getBlogPost();
+  }, []);
 
   return (
     <View style={styles.container}>

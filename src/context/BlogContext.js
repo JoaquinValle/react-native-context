@@ -1,8 +1,10 @@
 import createDataContext from "./createDataContext";
-import jsonServer from "../api/jsonServer"
+import jsonServer from "../api/jsonServer";
 
 const blogReducer = (state, action) => {
   switch (action.type) {
+    case "get_blogpost":
+      return [action.payload];
     case "add_blogpost":
       return [
         ...state,
@@ -33,6 +35,13 @@ const addBlogPost = (dispatch) => {
   };
 };
 
+const getBlogPost = (dispatch) => {
+  return async () => {
+    const response = await jsonServer.get("/blogposts");
+    dispatch({ type: "get_blogpost", payload: response });
+  };
+};
+
 const deleteBlogPost = (dispatch) => {
   return (id) => {
     dispatch({ type: "delete_blogpost", payload: id });
@@ -44,13 +53,13 @@ const editBlogPost = (dispatch) => {
     dispatch({
       type: "edit_blogpost",
       payload: { id, title: data.title, body: data.body },
-    });
+    }); 
     callback();
   };
 };
 
 export const { Context, Provider } = createDataContext(
   blogReducer,
-  { addBlogPost, deleteBlogPost, editBlogPost },
+  { addBlogPost, deleteBlogPost, editBlogPost, getBlogPost },
   []
 );
