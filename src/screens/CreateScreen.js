@@ -1,21 +1,11 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Button, View, TextInput, Text } from "react-native";
 import { Context as BlogContext } from "../context/BlogContext";
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "add_title":
-      return { ...state, title: action.payload };
-    case "add_body":
-      return { ...state, body: action.payload };
-    default:
-      return state;
-  }
-};
+import useForm from "../hooks/useForm";
 
 const CreateScreen = ({ navigation }) => {
   const { addBlogPost } = useContext(BlogContext);
-  const [state, dispatch] = useReducer(reducer, { title: "", body: "" });
+  const [state, dispatch] = useForm();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Enter Title:</Text>

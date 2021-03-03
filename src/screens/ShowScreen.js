@@ -10,8 +10,6 @@ const ShowScreen = ({ route }) => {
     return item.id === id
   });
 
-  console.log(id);
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{blogPost.title}</Text>

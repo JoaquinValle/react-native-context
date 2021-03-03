@@ -46,9 +46,12 @@ const App = () => {
           <Stack.Screen
             name="Show"
             component={ShowScreen}
-            options={({ navigation }) => ({
+            options={({ navigation, route }) => ({
               headerRight: () => (
-                <TouchableOpacity onPress={() => navigation.navigate("Edit")}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Edit", { id: route.params.id })
+                  }
+                >
                   <Svg
                     style={{ width: 28, height: 28, marginRight: 8 }}
                     xmlns="http://www.w3.org/2000/svg"
