@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Button, View, TextInput, Text } from "react-native";
 import useForm from "../hooks/useForm";
 
-const Form = ({ navigation, action, initialState, navRoute, titles, id }) => {
+const Form = ({ navigation, action, initialState, titles, id }) => {
   const [state, dispatch] = useForm(initialState);
 
   return (
