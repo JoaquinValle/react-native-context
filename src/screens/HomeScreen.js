@@ -14,13 +14,17 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPost();
+
+    navigation.addListener("focus", () => {
+      getBlogPost();
+    });
   }, []);
 
   return (
     <View style={styles.container}>
       <FlatList
         data={state}
-        keyExtractor={(key) => key.title}
+        keyExtractor={(key) => key.id.toString()}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
